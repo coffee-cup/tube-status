@@ -6,7 +6,7 @@ import { model, line } from "./model";
 import "./styles.css";
 
 const { Provider } = model.createStore({
-  logger: true,
+  logger: process.env.NODE_ENV === "production" ? false : true,
   initState: {
     lines: {
       bakerloo: line("bakerloo", "Bakerloo", "#b36305"),

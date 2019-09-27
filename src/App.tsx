@@ -11,8 +11,22 @@ const getDistruptionForLine = async (id: string) => {
   if (data.length === 0) {
     state.lines[id].status = "Good Service";
   } else {
-    // todo: parse status
-    state.lines[id].status = "Bad Service";
+    const words = [];
+    const text: string = data[0].closureText;
+    let s = text[0].toUpperCase();
+
+    for (let i = 1; i < text.length; i += 1) {
+      const c = text[i];
+      if (c === c.toUpperCase()) {
+        // new word
+        words.push(s);
+        s = "";
+      }
+      s += c;
+    }
+
+    words.push(s);
+    state.lines[id].status = words.join(" ");
   }
 };
 
