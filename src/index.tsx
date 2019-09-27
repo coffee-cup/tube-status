@@ -18,7 +18,7 @@ const { Provider } = model.createStore({
         "Hammersmith and City",
         "#f3a9bb",
       ),
-      jubliee: line("jubliee", "Jubliee", "#a0a5a9"),
+      jubilee: line("jubilee", "Jubliee", "#a0a5a9"),
       metropolitan: line("metropolitan", "Metropolitan", "#9b0056"),
       Northern: line("northern", "Northern", "#000000"),
       Piccadilly: line("piccadilly", "Piccadilly", "#003688"),
